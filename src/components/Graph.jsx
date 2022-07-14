@@ -57,7 +57,7 @@ class Graph extends Component {
     afterFetch = (temperatures) => {
         let dates = []; let temps = []
         this.setState({ shouldDisplay: false })
-
+        if(! temperatures.length) return
         temperatures.forEach(element => {
             dates.push(element.date_mesure_temp);
             temps.push(element.resultat)
@@ -76,7 +76,6 @@ class Graph extends Component {
             ],
         }
         this.setState({ shouldDisplay: true, data: data })
-        console.log(this);
     }
 
 
